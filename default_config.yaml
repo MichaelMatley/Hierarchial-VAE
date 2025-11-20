@@ -1,0 +1,48 @@
+# Default configuration for Hierarchical VAE training
+
+experiment:
+  name: "hierarchical_vae_default"
+  seed: 42
+  
+data:
+  fasta_file: "path/to/genome.fasta"
+  window_size: 1024
+  stride: 512
+  max_samples: null  # null = use all samples
+  filter_n_threshold: 0.1
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+model:
+  input_dim: 4096  # 1024 * 4 (one-hot)
+  latent_dims: [256, 512, 1024]
+  dropout: 0.3
+
+training:
+  epochs: 100
+  batch_size: 128
+  num_workers: 2
+  lr: 0.001
+  weight_decay: 0.00001
+  patience: 15
+  gradient_clip: 1.0
+
+beta_schedule:
+  mode: "linear"  # constant, linear, cosine, cyclical, sigmoid
+  max_beta: 1.0
+  warmup_epochs: 20
+  cycle_length: 20  # only for cyclical mode
+
+device:
+  use_cuda: true
+  device_id: 0
+
+paths:
+  checkpoint_dir: "outputs/checkpoints"
+  log_dir: "outputs/logs"
+  figure_dir: "outputs/figures"
+
+logging:
+  log_interval: 10  # Log every N batches
+  save_interval: 5  # Save checkpoint every N epochs
