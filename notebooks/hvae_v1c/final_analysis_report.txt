@@ -1,0 +1,45 @@
+================================================================================
+HIERARCHICAL VAE – FINAL ANALYSIS REPORT
+================================================================================
+
+1. TRAINING SUMMARY
+--------------------------------------------------------------------------------
+   Epochs trained    : 50
+   Final train loss  : 748.1270
+   Final val   loss  : 748.0401
+   Best  val   loss  : 748.0386
+   Final recon loss  : 748.1241
+   Final KL          : 0.0029
+
+2. MODEL ARCHITECTURE
+--------------------------------------------------------------------------------
+   Input dim         : 4096  (1024 bp one-hot)
+   Latent dims       : [256, 512, 1024]
+   Total latent dim  : 1792
+  Parameters        : 28,471,808
+
+3. INTRINSIC DIMENSIONALITY (95% variance)
+--------------------------------------------------------------------------------
+   level1 : intrinsic= 220 / 256  (85.9% utilised)
+   level2 : intrinsic= 394 / 512  (77.0% utilised)
+   level3 : intrinsic= 610 / 1024  (59.6% utilised)
+
+4. CLUSTERING (k=10)
+--------------------------------------------------------------------------------
+   level1 : silhouette=0.0010  davies-bouldin=8.6745
+   level2 : silhouette=0.0005  davies-bouldin=10.6022
+   level3 : silhouette=-0.0034  davies-bouldin=11.4505
+
+5. RECONSTRUCTION QUALITY
+--------------------------------------------------------------------------------
+   Samples evaluated : 10
+   Mean accuracy     : 0.00%
+   Std  accuracy     : 0.00%
+
+6. SYNTHETIC GENERATION
+--------------------------------------------------------------------------------
+   Sequences generated : 200
+   Mean GC content     : 0.00%
+   Std  GC content     : 0.00%
+   Training target GC  : 36.00%
+   Delta (|mean-tgt|)  : 36.00%

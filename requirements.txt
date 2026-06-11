@@ -1,0 +1,35 @@
+# Core deep learning
+
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Genomic data handling
+
+biopython>=1.81
+
+# Scientific computing
+
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Dimensionality reduction
+
+scikit-learn>=1.2.0
+umap-learn>=0.5.3
+
+# Progress bars
+
+tqdm>=4.65.0
+
+# Experiment tracking (optional)
+
+wandb>=0.15.0
+
+# Utilities
+
+pandas>=2.0.0

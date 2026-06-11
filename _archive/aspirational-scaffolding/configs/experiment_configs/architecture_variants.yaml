@@ -1,0 +1,24 @@
+# Configuration for architecture variant experiments
+
+experiment:
+  name: "architecture_variants"
+  seed: 42
+
+base_config: "../default_config.yaml"
+
+# Test different latent dimension configurations
+variants:
+  - name: "small"
+    latent_dims: [128, 256, 512]
+    
+  - name: "medium"
+    latent_dims: [256, 512, 1024]
+    
+  - name: "large"
+    latent_dims: [512, 1024, 2048]
+    
+  - name: "deep"
+    latent_dims: [128, 256, 512, 1024]  # 4 levels
+
+training:
+  epochs: 75
